@@ -1,9 +1,10 @@
 from http import HTTPStatus
+
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-from fast_zero.schemas import Message
 from fast_zero.olamundo import ola_mundo
+from fast_zero.schemas import Message, UserSchema
 
 app = FastAPI(title='Fast Zero')
 
@@ -16,3 +17,7 @@ def read_root():
 @app.get('/olamundo', status_code=HTTPStatus.OK, response_class=HTMLResponse)
 def on_olamundo():
     return ola_mundo()
+
+@app.post('/users/', status_code=HTTPStatus.CREATED)
+def create_user(user: UserSchema):
+    return user

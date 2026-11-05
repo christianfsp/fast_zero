@@ -1,4 +1,3 @@
-from fastapi.responses import HTMLResponse
 
 def ola_mundo():
     return """<!DOCTYPE html>
