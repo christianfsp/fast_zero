@@ -1,4 +1,4 @@
-
+# ruff: noqa: E501
 def ola_mundo():
     return """<!DOCTYPE html>
 <html lang="pt-BR">
