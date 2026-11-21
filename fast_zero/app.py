@@ -25,3 +25,9 @@ def create_user(user: UserSchema):
     user_with_id = UserDB(**user.model_dump(), id=len(database) + 1)
     database.append(user_with_id)
     return user_with_id
+
+
+@app.get('/users/', status_code=HTTPStatus.OK)
+def read_users():
+    return database
+
